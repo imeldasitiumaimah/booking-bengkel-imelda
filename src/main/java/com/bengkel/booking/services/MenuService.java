@@ -89,11 +89,13 @@ public class MenuService {
 			switch (menuChoice) {
 			case 1:
 				//panggil fitur Informasi Customer
-				PrintService.setCurrentLoggedInCustomer(currentLoggedInCustomer);
-				PrintService.showCustomerInfo();
+				BengkelService.setCurrentLoggedInCustomer(currentLoggedInCustomer);
+				BengkelService.showCustomerInfo();
 				break;
 			case 2:
 				//panggil fitur Booking Bengkel
+				BengkelService.setCurrentLoggedInCustomer(currentLoggedInCustomer);
+				BengkelService.bookingService();
 				break;
 			case 3:
 				//panggil fitur Top Up Saldo Coin
@@ -107,8 +109,6 @@ public class MenuService {
 				break;
 			}
 		} while (isLooping);
-		
-		
 	}
 	
 	//Silahkan tambahkan kodingan untuk keperluan Menu Aplikasi
